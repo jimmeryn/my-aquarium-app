@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "components/Home";
-import AquariumView from "components/AquariumView";
+import AquariumPage from "components/AquariumPage";
 
 export default function App() {
   const aquariumArray = [
@@ -18,7 +18,7 @@ export default function App() {
         </Route>
         {aquariumArray.map((aquarium) => (
           <Route key={aquarium.name} path={`/aquarium/${aquarium.id}`}>
-            <AquariumView name={aquarium.name} />
+            <AquariumPage />
           </Route>
         ))}
         <Route path="*">
