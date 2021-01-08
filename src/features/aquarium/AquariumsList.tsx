@@ -1,5 +1,5 @@
 import React from "react";
 
-const AquariumList = () => <div></div>;
+const AquariumsList = () => <div></div>;
 
-export default AquariumList;
+export default AquariumsList;
