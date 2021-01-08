@@ -1,7 +1,9 @@
-.App {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .app-container {
