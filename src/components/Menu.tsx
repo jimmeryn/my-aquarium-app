@@ -12,6 +12,7 @@ const StyledMenu = styled.div`
 
 const Menu: React.FunctionComponent = ({ children }) => (
   <StyledMenu>
+    <Button name={"ASDASDASD"} />
     {children}
   </StyledMenu>
 );
