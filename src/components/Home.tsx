@@ -1,13 +1,13 @@
 import React from "react";
 import FishBowlComponent from "./FishBowlComponent";
-import "index.css";
+import { Title, Subtitle } from "./Typography";
 
 const Home = () => (
   <div className="landing-page">
     <div className="head">
-      <h1>{"My Aquarium Application"}</h1>
-      <h2>{"Collect and display data"}</h2>
-      <h2>{"from your fish tanks"}</h2>
+          <Title>{"My Aquarium Application"}</Title>
+          <Subtitle>{"Collect and display data"}</Subtitle>
+          <Subtitle>{"from your fish tanks"}</Subtitle>
     </div>
     <FishBowlComponent />
   </div>
