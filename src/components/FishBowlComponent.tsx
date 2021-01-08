@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import { ReactComponent as FishBowl } from "assets/fishbowl.svg";
-// import gsap from "gsap";
 
 const FishBowlComponent = () => {
   const wrapper = useRef(null) as any;
 
   return (
-    <div ref={wrapper}>
+    <div className="fish-bowl" ref={wrapper}>
       <FishBowl />
     </div>
   );
