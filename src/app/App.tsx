@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "components/Home";
 import AquariumPage from "components/AquariumPage";
 
-export default function App() {
+const App: React.FunctionComponent = () => {
   const aquariumArray = [
     { name: "aquarium1", id: 1 },
     { name: "aquarium2", id: 2 },
@@ -28,4 +28,6 @@ export default function App() {
       </Switch>
     </Router>
   );
-}
+};
+
+export default App;
