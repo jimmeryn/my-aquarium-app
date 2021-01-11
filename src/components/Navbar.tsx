@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-// import Hamburger from "/Hamburger";
+import Hamburger from "./Hamburger";
 
 const StyledNav = styled.div`
   background-color: #009be5;
@@ -14,7 +14,14 @@ const StyledNav = styled.div`
 `;
 
 const Navbar: React.FunctionComponent = () => (
-  <StyledNav>{/* <Hamburger /> */}</StyledNav>
+  <StyledNav>
+    <Hamburger
+      active={true}
+      setActive={() => {
+        return;
+      }}
+    />
+  </StyledNav>
 );
 
 export default Navbar;
