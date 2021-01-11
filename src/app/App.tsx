@@ -22,7 +22,7 @@ const App: React.FunctionComponent = () => {
           </Route>
         ))}
         <Route path="*">
-          {/* TODO: Error page 400*/}
+          {/* TODO: Error page 404*/}
           <Home />
         </Route>
       </Switch>
