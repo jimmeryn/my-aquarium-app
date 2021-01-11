@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./buttons/Button";
+import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
+import { TitleButton } from "components/buttons/TitleButton";
 
 const StyledMenu = styled.div`
   background-color: #18202c;
@@ -12,8 +13,12 @@ const StyledMenu = styled.div`
 
 const Menu: React.FunctionComponent = ({ children }) => (
   <StyledMenu>
-    <Button name={"ASDASDASD"} />
+    <TitleButton className={"title-button"} name={"My Aquarium"} />
     {children}
+    <AquariumTitleButton
+      className={"add-aquarium-button"}
+      name={"Add Aquarium"}
+    />
   </StyledMenu>
 );
 
