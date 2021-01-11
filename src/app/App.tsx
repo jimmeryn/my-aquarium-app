@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Home from "components/Home";
-import AquariumPage from "components/AquariumPage";
+import Home from "components/pages/Home";
+import AquariumPage from "components/pages/AquariumPage";
 
 const App: React.FunctionComponent = () => {
   const aquariumArray = [
