@@ -10,7 +10,7 @@ import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 
 const Home = () => (
   <Page>
-    <Menu>
+    <Menu className="menu">
       <AquariumTitleButton
         className={"aquarium-title"}
         name={"Aquarium #1"}
