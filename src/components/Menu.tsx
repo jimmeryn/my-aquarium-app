@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
+import { Link } from "react-router-dom";
 import { TitleButton } from "components/buttons/TitleButton";
 
-const MenuComponent: React.FunctionComponent<{ className: string }> = ({
-  className,
-  children,
-}) => (
+const MenuComponent: React.FunctionComponent<{
+  className: string;
+}> = ({ className, children }) => (
   <div className={className}>
-    <TitleButton className={"title-button"} name={"My Aquarium"} />
+    <Link to={"/"}>
+      <TitleButton className={"title-button"} name={"My Aquarium"} />
+    </Link>
     {children}
-    <AquariumTitleButton
-      className={"add-aquarium-button"}
-      name={"Add Aquarium"}
-    />
   </div>
 );
 
