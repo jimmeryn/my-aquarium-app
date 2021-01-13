@@ -47,13 +47,7 @@ const Home = () => (
       />
     </Menu>
     <PageContent>
-      <Navbar />
-      <div>
-        <div className="head">
-          <Title>{"My Aquarium Application"}</Title>
-          <Subtitle>{"Collect and display data"}</Subtitle>
-          <Subtitle>{"from your fish tanks"}</Subtitle>
-        </div>
+        <Head className="head" />
         <FishBowlComponent />
       </div>
     </PageContent>
