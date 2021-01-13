@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Head } from "./Head";
 import FishBowlComponent from "components/FishBowlComponent";
 import Page from "./Page";
 import Navbar from "components/Navbar";
