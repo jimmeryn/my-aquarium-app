@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledPage = styled.div`
+const PageComponent: React.FunctionComponent<{ className: string }> = ({
+  className,
+  children,
+}) => <div className={className}>{children}</div>;
+
+const Page = styled(PageComponent)`
   height: 100vh;
   display: flex;
   flex-direction: row;
 `;
-
-const Page: React.FunctionComponent = ({ children }) => (
-  <StyledPage>{children}</StyledPage>
-);
 
 export default Page;
