@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
- type SliceState = { name?: string, size: number, startDate: Date };
+type SliceState = { name?: string, size: number, startDate: Date };
 const initialState: SliceState[] = [];
 
 const aquariumSlice = createSlice({
