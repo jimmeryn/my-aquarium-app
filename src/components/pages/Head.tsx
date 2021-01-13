@@ -12,7 +12,9 @@ const HeadComponent: React.FunctionComponent<{ className: string }> = ({
   </div>
 );
 
-export const Head = styled(HeadComponent)`
+const Head = styled(HeadComponent)`
   margin: 3vw 27vw 15vh 6vw;
   padding: 0;
 `;
+
+export default Head;
