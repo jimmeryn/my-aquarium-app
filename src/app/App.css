@@ -10,9 +10,8 @@
   height: 50vh;
 }
 
-.head {
-  margin: 3vw 27vw 15vh 6vw;
-  padding: 0;
+a {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 800px) {
