@@ -2,7 +2,20 @@ import * as React from "react";
 import styled from "styled-components";
 import Hamburger from "./Hamburger";
 
-const StyledNav = styled.div`
+const NavbarComponent: React.FunctionComponent<{ className: string }> = ({
+  className,
+}) => (
+  <div className={className}>
+    <Hamburger
+      active={true}
+      setActive={() => {
+        return;
+      }}
+    />
+  </div>
+);
+
+const Navbar = styled(NavbarComponent)`
   background-color: #009be5;
   min-height: 7vh;
   height: 7vh;
@@ -12,16 +25,5 @@ const StyledNav = styled.div`
   position: sticky;
   top: 0;
 `;
-
-const Navbar: React.FunctionComponent = () => (
-  <StyledNav>
-    <Hamburger
-      active={true}
-      setActive={() => {
-        return;
-      }}
-    />
-  </StyledNav>
-);
 
 export default Navbar;
