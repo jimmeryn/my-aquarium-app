@@ -42,6 +42,7 @@ const Home = () => (
       />
     </Menu>
     <PageContent>
+      <Navbar className="navbar" />
         <Head className="head" />
         <FishBowlComponent />
     </PageContent>
