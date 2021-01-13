@@ -17,33 +17,22 @@ const Home = () => (
         dividers={true}
       />
       <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Show Params"}
+                className="aquarium-param-button"
+                name="Show Params"
       />
       <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Add Params"}
+              className="aquarium-param-button"
+              name="Add Params"
       />
       <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Add Refill"}
+              className="aquarium-param-button"
+              name="Add Refill"
       />
+          </React.Fragment>
+        ))}
       <AquariumTitleButton
-        className={"aquarium-title"}
-        name={"Aquarium #2"}
-        dividers={true}
-      />
-      <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Show Params"}
-      />
-      <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Add Params"}
-      />
-      <AquariumParamButton
-        className={"aquarium-param-button"}
-        name={"Add Refill"}
+          className="add-aquarium-button"
+          name="Add Aquarium"
       />
     </Menu>
     <PageContent>
