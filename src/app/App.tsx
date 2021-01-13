@@ -5,11 +5,7 @@ import Home from "components/pages/Home";
 import AquariumPage from "components/pages/AquariumPage";
 
 const App: React.FunctionComponent = () => {
-  const aquariumArray = [
-    { name: "aquarium1", id: 1 },
-    { name: "aquarium2", id: 2 },
-  ];
-
+  const aquariums = require("api/db.json").aquariums;
   return (
     <Router>
       <Switch>
