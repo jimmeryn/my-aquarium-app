@@ -14,9 +14,8 @@ import { AquariumParamButton } from "components/buttons/AquariumParamButton";
     <Menu className="menu">
           <Link to={`/aquarium/${id}`}>
       <AquariumTitleButton
-        className={"aquarium-title"}
-        name={"Aquarium #1"}
-        dividers={true}
+              className="aquarium-title"
+              name={name && name.length > 0 ? name : `Aquarium #${id + 1}`}
       />
           </Link>
           <Link to={`/aquarium/${id}`}>
