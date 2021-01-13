@@ -1,28 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Home from "components/pages/Home";
 import AquariumPage from "components/pages/AquariumPage";
+import { Aquarium } from "models";
 
 const App: React.FunctionComponent = () => {
-  const aquariums = require("api/db.json").aquariums;
+  const aquariums: Aquarium[] = require("api/db.json").aquariums;
+
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home aquariums={aquariums} />
         </Route>
-        {aquariumArray.map((aquarium) => (
-          <Route key={aquarium.name} path={`/aquarium/${aquarium.id}`}>
+        {aquariums.map(({ id }) => (
+          <Route key={id} path={`/aquarium/${id}`}>
             <AquariumPage />
           </Route>
         ))}
         <Route path="*">
           {/* TODO: Error page 404*/}
-          <Home />
+          <Home aquariums={aquariums} />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 
