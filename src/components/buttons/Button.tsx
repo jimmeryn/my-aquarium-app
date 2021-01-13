@@ -6,10 +6,11 @@ const Button: React.FunctionComponent<{
   name: string;
   handleOnClick?: () => void;
 }> = ({ className, name, handleOnClick }) => (
+  <button
     className={className}
     onClick={(e) => {
       if (handleOnClick) {
-      e.preventDefault();
+        e.preventDefault();
         handleOnClick();
       }
     }}
