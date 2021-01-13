@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Page from "./Page";
 import { Head } from "./Head";
 import FishBowlComponent from "components/FishBowlComponent";
-import Page from "./Page";
 import Navbar from "components/Navbar";
 import Menu from "components/Menu";
 import PageContent from "./PageContent";
-import { Title, Subtitle } from "components/Typography";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 
