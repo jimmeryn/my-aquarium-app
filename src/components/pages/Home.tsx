@@ -38,7 +38,6 @@ const Home = () => (
     <PageContent>
         <Head className="head" />
         <FishBowlComponent />
-      </div>
     </PageContent>
   </Page>
 );
