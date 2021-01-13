@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import Page from "./Page";
-import { Head } from "./Head";
-import FishBowlComponent from "components/FishBowlComponent";
-import Navbar from "components/Navbar";
-import Menu from "components/Menu";
-import PageContent from "./PageContent";
-import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
-import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 import { Aquarium } from "models";
+import Page from "./Page";
+import Head from "./Head";
+import PageContent from "./PageContent";
+import AquariumsList from "features/aquarium/AquariumsList";
+import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
+import FishBowlComponent from "components/FishBowlComponent";
+import Menu from "components/Menu";
+import Navbar from "components/Navbar";
 
 const Home: React.FunctionComponent<{
   aquariums: Aquarium[];
@@ -17,28 +15,7 @@ const Home: React.FunctionComponent<{
   <Page className="page">
     <Menu className="menu">
       {aquariums.map(({ id, name }) => (
-        <React.Fragment key={id}>
-          <Link to={`/aquarium/${id}`}>
-            <AquariumTitleButton
-              className="aquarium-title"
-              name={name && name.length > 0 ? name : `Aquarium #${id + 1}`}
-            />
-          </Link>
-          <Link to={`/aquarium/${id}`}>
-            <AquariumParamButton
-              className="aquarium-param-button"
-              name="Show Params"
-            />
-          </Link>
-          <AquariumParamButton
-            className="aquarium-param-button"
-            name="Add Params"
-          />
-          <AquariumParamButton
-            className="aquarium-param-button"
-            name="Add Refill"
-          />
-        </React.Fragment>
+        <AquariumsList id={id} name={name} />
       ))}
       <AquariumTitleButton
         className="add-aquarium-button"
