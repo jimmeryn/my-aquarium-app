@@ -1,27 +1,14 @@
 import React from "react";
-import { AquariumParamButton } from "components/buttons/AquariumParamButton";
-import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
-import { Link } from "react-router-dom";
+import { Aquarium } from "models";
+import AquariumsListItem from "./AquariumsListItem";
 
-const AquariumsList: React.FunctionComponent<{ id: number; name?: string }> = ({
-  id,
-  name,
+const AquariumsList: React.FunctionComponent<{ aquariums: Aquarium[] }> = ({
+  aquariums,
 }) => (
-  <React.Fragment key={id}>
-    <Link to={`/aquarium/${id}`}>
-      <AquariumTitleButton
-        className="aquarium-title"
-        name={name && name.length > 0 ? name : `Aquarium #${id + 1}`}
-      />
-    </Link>
-    <Link to={`/aquarium/${id}`}>
-      <AquariumParamButton
-        className="aquarium-param-button"
-        name="Show Params"
-      />
-    </Link>
-    <AquariumParamButton className="aquarium-param-button" name="Add Params" />
-    <AquariumParamButton className="aquarium-param-button" name="Add Refill" />
+  <React.Fragment>
+    {aquariums.map(({ id, name }) => (
+      <AquariumsListItem key={id} id={id} name={name} />
+    ))}
   </React.Fragment>
 );
 
