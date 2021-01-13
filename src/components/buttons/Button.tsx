@@ -4,13 +4,14 @@ import styled, { css } from "styled-components";
 const Button: React.FunctionComponent<{
   className: string;
   name: string;
-  handleButtonClick?: () => void;
-}> = ({ className, name, handleButtonClick }) => (
-  <button
+  handleOnClick?: () => void;
+}> = ({ className, name, handleOnClick }) => (
     className={className}
     onClick={(e) => {
+      if (handleOnClick) {
       e.preventDefault();
-      if (handleButtonClick) handleButtonClick();
+        handleOnClick();
+      }
     }}
   >
     {name}
