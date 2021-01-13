@@ -31,6 +31,7 @@ export interface UnnormalizedStateData {
     name?: string;
     size: number;
     params: number[];
+    startDate: Date;
   }
   
   export interface Param {
