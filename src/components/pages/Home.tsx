@@ -10,8 +10,7 @@ import { Title, Subtitle } from "components/Typography";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 
-const Home = () => (
-  <Page>
+  <Page className="page">
     <Menu className="menu">
           <Link to={`/aquarium/${id}`}>
       <AquariumTitleButton
