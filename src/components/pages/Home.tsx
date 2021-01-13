@@ -9,7 +9,11 @@ import Menu from "components/Menu";
 import PageContent from "./PageContent";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import { AquariumParamButton } from "components/buttons/AquariumParamButton";
+import { Aquarium } from "models";
 
+const Home: React.FunctionComponent<{
+  aquariums: Aquarium[];
+}> = ({ aquariums }) => (
   <Page className="page">
     <Menu className="menu">
           <Link to={`/aquarium/${id}`}>
