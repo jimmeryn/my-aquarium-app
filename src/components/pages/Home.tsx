@@ -16,37 +16,39 @@ const Home: React.FunctionComponent<{
 }> = ({ aquariums }) => (
   <Page className="page">
     <Menu className="menu">
+      {aquariums.map(({ id, name }) => (
+        <React.Fragment key={id}>
           <Link to={`/aquarium/${id}`}>
-      <AquariumTitleButton
+            <AquariumTitleButton
               className="aquarium-title"
               name={name && name.length > 0 ? name : `Aquarium #${id + 1}`}
-      />
+            />
           </Link>
           <Link to={`/aquarium/${id}`}>
-      <AquariumParamButton
-                className="aquarium-param-button"
-                name="Show Params"
-      />
+            <AquariumParamButton
+              className="aquarium-param-button"
+              name="Show Params"
+            />
           </Link>
-      <AquariumParamButton
-              className="aquarium-param-button"
-              name="Add Params"
-      />
-      <AquariumParamButton
-              className="aquarium-param-button"
-              name="Add Refill"
-      />
-          </React.Fragment>
-        ))}
+          <AquariumParamButton
+            className="aquarium-param-button"
+            name="Add Params"
+          />
+          <AquariumParamButton
+            className="aquarium-param-button"
+            name="Add Refill"
+          />
+        </React.Fragment>
+      ))}
       <AquariumTitleButton
-          className="add-aquarium-button"
-          name="Add Aquarium"
+        className="add-aquarium-button"
+        name="Add Aquarium"
       />
     </Menu>
     <PageContent>
       <Navbar className="navbar" />
-        <Head className="head" />
-        <FishBowlComponent />
+      <Head className="head" />
+      <FishBowlComponent />
     </PageContent>
   </Page>
 );
