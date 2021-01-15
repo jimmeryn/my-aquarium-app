@@ -1,6 +1,7 @@
-# MY AQUARIUM
+# My Aquarium
 
-My aquarium is an application created to collect data from the aquarium and display it in a clear and simple way using tables and graphs.
+My Aquarium is an application created to collect data from the aquarium and display it in a clear and simple way using tables and graphs.
+This is the second version of this app. First version can be found here: [My-Aquarium](https://github.com/jimmeryn/my-aquarium)
 
 ## Design
 
