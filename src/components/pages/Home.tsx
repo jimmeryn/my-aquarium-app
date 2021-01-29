@@ -7,6 +7,7 @@ import AquariumsList from "features/aquarium/AquariumsList";
 import FishBowlComponent from "components/FishBowlComponent";
 import Menu from "components/Menu";
 import Navbar from "components/Navbar";
+import Dialog from "features/dialog/Dialog";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 
 const Home: React.FunctionComponent<{
@@ -18,6 +19,11 @@ const Home: React.FunctionComponent<{
       <AquariumTitleButton className="add-aquarium-button">
         {"Add Aquarium"}
       </AquariumTitleButton>
+      <Dialog
+        className="dialog"
+        title="Test"
+        submitHandle={() => {}}
+        isOpen={false}
       />
     </Menu>
     <PageContent>
