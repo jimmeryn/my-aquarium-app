@@ -9,7 +9,6 @@ export const AquariumParamButton = styled(StyledButton)<{ divider?: boolean }>`
   :hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  margin-top: 1px;
   ${(props) =>
     props.divider &&
     css`
