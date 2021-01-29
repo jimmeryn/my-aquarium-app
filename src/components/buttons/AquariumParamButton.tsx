@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { StyledButton } from "./Button";
 
-export const AquariumParamButton = styled(StyledButton)`
+export const AquariumParamButton = styled(StyledButton)<{ divider?: boolean }>`
   font-weight: lighter;
   font-size: 0.9rem;
   color: white;
@@ -9,4 +9,10 @@ export const AquariumParamButton = styled(StyledButton)`
   :hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  margin-top: 1px;
+  ${(props) =>
+    props.divider &&
+    css`
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    `};
 `;
