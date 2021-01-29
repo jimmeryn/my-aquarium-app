@@ -3,9 +3,8 @@ import styled, { css } from "styled-components";
 
 const Button: React.FunctionComponent<{
   className: string;
-  name: string;
   handleOnClick?: () => void;
-}> = ({ className, name, handleOnClick }) => (
+}> = ({ className, handleOnClick, children }) => (
   <button
     className={className}
     onClick={(e) => {
@@ -15,7 +14,7 @@ const Button: React.FunctionComponent<{
       }
     }}
   >
-    {name}
+    {children}
   </button>
 );
 
@@ -33,6 +32,7 @@ export const StyledButton = styled(Button)<{ dividers?: boolean }>`
   :hover {
     opacity: 0.8;
   }
+
   border: none;
   ${(props) =>
     props.dividers &&

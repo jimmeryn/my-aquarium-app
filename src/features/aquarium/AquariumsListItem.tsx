@@ -9,19 +9,21 @@ const AquariumsListItem: React.FunctionComponent<{
 }> = ({ id, name }) => (
   <React.Fragment key={id}>
     <Link to={`/aquarium/${id}`}>
-      <AquariumTitleButton
-        className="aquarium-title"
-        name={name && name.length > 0 ? name : `Aquarium #${id + 1}`}
-      />
+      <AquariumTitleButton className="aquarium-title">
+        {name && name.length > 0 ? name : `Aquarium #${id + 1}`}
+      </AquariumTitleButton>
     </Link>
     <Link to={`/aquarium/${id}`}>
-      <AquariumParamButton
-        className="aquarium-param-button"
-        name="Show Params"
-      />
+      <AquariumParamButton className="aquarium-param-button">
+        {"Show Params"}
+      </AquariumParamButton>
     </Link>
-    <AquariumParamButton className="aquarium-param-button" name="Add Params" />
-    <AquariumParamButton className="aquarium-param-button" name="Add Refill" />
+    <AquariumParamButton className="aquarium-param-button">
+      {"Add Params"}
+    </AquariumParamButton>
+    <AquariumParamButton className="aquarium-param-button">
+      {"Add Refill"}
+    </AquariumParamButton>
   </React.Fragment>
 );
 

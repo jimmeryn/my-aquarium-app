@@ -15,9 +15,9 @@ const Home: React.FunctionComponent<{
   <Page className="page">
     <Menu className="menu">
       <AquariumsList aquariums={aquariums} />
-      <AquariumTitleButton
-        className="add-aquarium-button"
-        name="Add Aquarium"
+      <AquariumTitleButton className="add-aquarium-button">
+        {"Add Aquarium"}
+      </AquariumTitleButton>
       />
     </Menu>
     <PageContent>

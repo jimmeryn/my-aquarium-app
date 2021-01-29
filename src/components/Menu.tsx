@@ -8,7 +8,7 @@ const MenuComponent: React.FunctionComponent<{
 }> = ({ className, children }) => (
   <div className={className}>
     <Link to={"/"}>
-      <TitleButton className={"title-button"} name={"My Aquarium"} />
+      <TitleButton className="title-button">{"My Aquarium"}</TitleButton>
     </Link>
     {children}
   </div>
