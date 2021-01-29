@@ -6,8 +6,6 @@ const LatestParamList: React.FunctionComponent<{ params: Param[] }> = ({
   params,
 }) => (
   <React.Fragment>
-    {/* <AddParamButton />
-    <AddRefillButton /> */}
     {params.map(({ id, value, name }) => (
       <LatestParamListItem
         className="latest-param-list-item"
