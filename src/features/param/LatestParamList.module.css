@@ -1,0 +1,17 @@
+.paramListItem {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 35px 0 20px;
+}
+
+.paramName {
+  text-transform: none;
+  font-size: 14px;
+}
+
+.paramValue {
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 300;
+}
