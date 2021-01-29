@@ -7,7 +7,7 @@ const LatestParamListItem: React.FunctionComponent<{
   name: string;
   value: number | null;
 }> = ({ className, name, value }) => (
-  <AquariumParamButton className={className}>
+  <AquariumParamButton className={className} divider>
     <div className={styles.paramListItem}>
       <div className={styles.paramName}>{name}</div>
       <div className={styles.paramValue}>{`${value} [mg/l]`}</div>
