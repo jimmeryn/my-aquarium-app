@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
  type SliceState = { name: string, value: number, date: Date };
-const initialState: SliceState[] = [];
+const initialState: SliceState[] = require("api/db.json").params;
 
 const paramSlice = createSlice({
   name: "param",
