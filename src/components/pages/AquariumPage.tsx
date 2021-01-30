@@ -9,6 +9,7 @@ import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import { Param } from "models";
 import AddRefillButton from "features/param/AddRefillButton";
 import AddParamsButton from "features/param/AddParamsButton";
+import ParamTable from "features/param/ParamsTable";
 import Graph from "features/graph/Graph";
 
 const AquariumPage: React.FunctionComponent<{
@@ -28,6 +29,7 @@ const AquariumPage: React.FunctionComponent<{
     <PageContent>
       <Navbar className="navbar" />
       <Graph />
+      <ParamTable />
     </PageContent>
   </Page>
 );
