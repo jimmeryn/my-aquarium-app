@@ -7,7 +7,8 @@ import Navbar from "components/Navbar";
 import LatestParamList from "features/param/LatestParamsList";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import { Param } from "models";
-import AddButton from "components/buttons/AddButton";
+import AddRefillButton from "features/param/AddRefillButton";
+import AddParamsButton from "features/param/AddParamsButton";
 
 const AquariumPage: React.FunctionComponent<{
   name: string;
@@ -19,12 +20,8 @@ const AquariumPage: React.FunctionComponent<{
       <AquariumTitleButton className="aquarium-title">
         {name}
       </AquariumTitleButton>
-      <AddButton
-        className="refill-button"
-        name="Refill"
-        value={refillValue ?? "No refills"}
-      />
-      <AddButton className="refill-button" name="Parameters" />
+      <AddRefillButton refillValue={refillValue} />
+      <AddParamsButton />
       <LatestParamList params={params} />
     </Menu>
     <PageContent>
