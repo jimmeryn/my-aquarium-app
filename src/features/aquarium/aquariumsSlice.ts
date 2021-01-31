@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Aquarium } from 'models';
 
-type SliceState = { name?: string, size: number, startDate: Date };
-const initialState: SliceState[] = require("api/db.json").aquariums;
+const initialState: Aquarium[] = require("api/db.json").aquariums;
 
 const aquariumSlice = createSlice({
   name: "aquarium",
@@ -9,7 +9,7 @@ const aquariumSlice = createSlice({
   reducers: {
     addAquarium(state, action: PayloadAction<{ name?: string, size: number, startDate: Date }>) {
       const { name, size, startDate } = action.payload
-      state.push({ name, size, startDate })
+      state.push({ name, size, params: [], startDate })
     }
   }
 })
