@@ -6,7 +6,7 @@ const AquariumsList: React.FunctionComponent<{ aquariums: Aquarium[] }> = ({
   aquariums,
 }) => (
   <React.Fragment>
-    {aquariums.map(({ id, name }) => (
+    {aquariums.map(({ name }, id) => (
       <AquariumsListItem key={id} id={id} name={name} />
     ))}
   </React.Fragment>
