@@ -14,10 +14,10 @@ const App: React.FunctionComponent = () => {
         <Route exact path="/">
           <Home aquariums={aquariums} />
         </Route>
-        {aquariums.map(({ id }, i) => (
+        {aquariums.map(({ id, name }, i) => (
           <Route key={id} path={`/aquarium/${id}`}>
             <AquariumPage
-              name={`Aquarium #${i + 1}`}
+              name={name ?? `Aquarium #${i + 1}`}
               aquariumId={id as number}
             />
           </Route>
