@@ -1,20 +1,17 @@
 import React from "react";
-import { Param } from "models";
-import LatestParamListItem from "./LatestParamListItem";
+import { useSelector } from "react-redux";
+import ParamList from "./ParamsList";
+import { RootState } from "app/rootReducer";
+import { getLatestParams } from "api/filterParams";
 
-const LatestParamList: React.FunctionComponent<{ params: Param[] }> = ({
-  params,
-}) => (
-  <React.Fragment>
-    {params.map(({ id, value, name }) => (
-      <LatestParamListItem
-        className="latest-param-list-item"
-        key={id}
-        value={value}
-        name={name}
-      />
-    ))}
-  </React.Fragment>
-);
+const LatestParamsList: React.FunctionComponent<{ aquariumId: number }> = ({
+  aquariumId,
+}) => {
+  const params = useSelector((state: RootState) =>
+    getLatestParams(state.aquariumSlice[aquariumId].params)
+  );
 
-export default LatestParamList;
+  return <ParamList params={params} />;
+};
+
+export default LatestParamsList;
