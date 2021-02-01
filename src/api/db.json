@@ -3,6 +3,7 @@
         {
             "id":0,
             "size":170,
+            "name": "GREAT DESTRUCTION",
             "params":[
                 {"id":0,"aquariumId":0,"date":"2019-03-17T00:00:00.000Z","name":"Cl2","value":0},
                 {"id":1,"aquariumId":0,"date":"2019-03-17T00:00:00.000Z","name":"pH","value":6.6},
