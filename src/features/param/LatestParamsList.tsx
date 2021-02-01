@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ParamList from "./ParamsList";
 import { RootState } from "app/rootReducer";
-import { getLatestParams } from "api/filterParams";
+import { getLatestParams } from "api/filterParamsFunctions";
 
 const LatestParamsList: React.FunctionComponent<{ aquariumId: number }> = ({
   aquariumId,
