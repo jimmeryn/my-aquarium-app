@@ -1,51 +1,28 @@
 import React from "react";
-
 import Page from "./Page";
 import PageContent from "./PageContent";
+import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 import Menu from "components/Menu";
 import Navbar from "components/Navbar";
-import LatestParamList from "features/param/LatestParamsList";
-import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
-import AddRefillButton from "features/param/AddRefillButton";
 import AddParamsButton from "features/param/AddParamsButton";
-import ParamTable from "features/param/ParamsTable";
+import AddRefillButton from "features/param/AddRefillButton";
 import Graph from "features/graph/Graph";
-import { useSelector } from "react-redux";
-import { RootState } from "app/rootReducer";
-import { Param } from "models";
+import LatestParamsList from "features/param/LatestParamsList";
+import ParamTable from "features/param/ParamsTable";
 
 const AquariumPage: React.FunctionComponent<{
   name: string;
   aquariumId: number;
 }> = ({ name, aquariumId }) => {
-  function getLatestParamsAndFilterValue(params: Param[]) {
-    let initState: { params: Param[]; refillValue: number | undefined } = {
-      params: [],
-      refillValue: undefined,
-    };
-
-    return params.reduce(
-      (paramAndFilterObject, currentParam) =>
-        currentParam.name === "refill"
-          ? { ...paramAndFilterObject }
-          : { ...paramAndFilterObject, params: [...params, currentParam] },
-      initState
-    );
-  }
-
-  const { params, refillValue } = useSelector((state: RootState) =>
-    getLatestParamsAndFilterValue(state.aquariumSlice[aquariumId].params)
-  );
-
   return (
     <Page className="page">
       <Menu className="menu">
         <AquariumTitleButton className="aquarium-title">
           {name}
         </AquariumTitleButton>
-        <AddRefillButton refillValue={refillValue} />
+        <AddRefillButton aquariumId={aquariumId} />
         <AddParamsButton />
-        <LatestParamList params={params} />
+        <LatestParamsList aquariumId={aquariumId} />
       </Menu>
       <PageContent>
         <Navbar className="navbar" />
