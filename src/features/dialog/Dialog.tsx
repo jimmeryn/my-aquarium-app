@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledButton } from "../../components/buttons/Button";
-import styles from "./Dialog.module.css";
+import styles from "./Dialog.module.scss";
 
 const DialogComponent: React.FunctionComponent<{
   className: string;

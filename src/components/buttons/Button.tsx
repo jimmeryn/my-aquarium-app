@@ -37,7 +37,7 @@ export const StyledButton = styled(Button)<{ dividers?: boolean }>`
   ${(props) =>
     props.dividers &&
     css`
-      border-top: 2px solid #313b49;
-      border-bottom: 2px solid #313b49;
+      border-top: 2px solid var(--dark-grey-1);
+      border-bottom: 2px solid var(--dark-grey-1);
     `}
 `;

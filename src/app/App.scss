@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
 
+:root {
+  --light-grey-1: #bdc1c5;
+  --light-grey-2: #bdc1b7;
+  --page-content-color: #eaeff1;
+  --subtitle-color: #757575;
+  --dark-grey-1: #313b49;
+  --dark-grey-2: #232f3e;
+  --menu-background-color: #18202c;
+  --navbar-color: #009be5;
+  --background-filter-color: rgba(0, 0, 0, 0.5);
+  --hover-color: rgba(0, 0, 0, 0.1);
+  --divider-color: rgba(0, 0, 0, 0.12);
+}
+
 *,
 *::before,
 *::after {
@@ -15,7 +29,7 @@ a {
 }
 
 .MuiButton-label {
-  color: #bdc1c5;
+  color: var(--light-grey-1);
 }
 
 @media only screen and (max-width: 800px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ParamsList.module.css";
+import styles from "./ParamsList.module.scss";
 import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 
 const ParamsListItem: React.FunctionComponent<{

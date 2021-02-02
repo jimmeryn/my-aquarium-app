@@ -1,0 +1,53 @@
+@import "app/App.scss";
+
+.dialog {
+  visibility: visible;
+  width: 30vw;
+  min-width: 400px;
+  height: 80vh;
+  background-color: var(--dark-grey-2);
+  border-radius: 15px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    width: 70%;
+    height: 8vh;
+    margin-bottom: 10vh;
+  }
+}
+
+.dialogTitle {
+  font-family: "Poppins";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  text-align: center;
+  color: var(--light-grey-1);
+  padding-bottom: 0.5em;
+  border-bottom: 3px solid var(--dark-grey-1);
+  width: 100%;
+}
+
+.dialogButton {
+  border-radius: 15px;
+  background-color: var(--dark-grey-1);
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+}
+
+.dialogBackground {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-filter-color);
+}

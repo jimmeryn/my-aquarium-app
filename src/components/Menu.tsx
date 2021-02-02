@@ -15,7 +15,7 @@ const MenuComponent: React.FunctionComponent<{
 );
 
 const Menu = styled(MenuComponent)`
-  background-color: #18202c;
+  background-color: var(--menu-background-color);
   height: 100vh;
   width: 19vw;
   z-index: 3;
