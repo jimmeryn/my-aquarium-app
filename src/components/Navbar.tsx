@@ -18,6 +18,7 @@ const NavbarComponent: React.FunctionComponent<{ className: string }> = ({
 const Navbar = styled(NavbarComponent)`
   background-color: #009be5;
   min-height: 7vh;
+  max-height: 7vh;
   height: 7vh;
   width: 81vw;
   display: flex;

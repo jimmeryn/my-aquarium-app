@@ -7,7 +7,7 @@
 }
 
 .fish-bowl svg {
-  height: 50vh;
+  max-height: 50vh;
 }
 
 a {
