@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Navbar from "components/Navbar";
 
 const StyledContent = styled.div`
   display: flex;
@@ -9,7 +10,10 @@ const StyledContent = styled.div`
 `;
 
 const PageContent: React.FunctionComponent = ({ children }) => (
-  <StyledContent>{children}</StyledContent>
+  <StyledContent>
+    <Navbar className="navbar" />
+    {children}
+  </StyledContent>
 );
 
 export default PageContent;

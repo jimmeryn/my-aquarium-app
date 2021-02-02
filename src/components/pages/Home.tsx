@@ -6,7 +6,6 @@ import PageContent from "./PageContent";
 import AquariumsList from "features/aquarium/AquariumsList";
 import FishBowlComponent from "components/FishBowlComponent";
 import Menu from "components/Menu";
-import Navbar from "components/Navbar";
 import Dialog from "features/dialog/Dialog";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
 
@@ -27,7 +26,6 @@ const Home: React.FunctionComponent<{
       />
     </Menu>
     <PageContent>
-      <Navbar className="navbar" />
       <Head className="head" />
       <FishBowlComponent />
     </PageContent>
