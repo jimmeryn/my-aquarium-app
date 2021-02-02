@@ -7,6 +7,7 @@ const StyledContent = styled.div`
   flex-direction: column;
   background-color: #eaeff1;
   text-align: center;
+  max-width: 81vw;
 `;
 
 const PageContent: React.FunctionComponent = ({ children }) => (

@@ -13,7 +13,7 @@ const HeadComponent: React.FunctionComponent<{ className: string }> = ({
 );
 
 const Head = styled(HeadComponent)`
-  margin: 3vw 27vw 15vh 6vw;
+  margin: 3vw 20vw 15vh 6vw;
   padding: 0;
 `;
 
