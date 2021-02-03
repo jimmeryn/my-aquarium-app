@@ -1,6 +1,7 @@
 import React from "react";
 import { Aquarium } from "models";
 import AquariumsListItem from "./AquariumsListItem";
+import AddAquariumButton from "./AddAquariumButton";
 
 const AquariumsList: React.FunctionComponent<{ aquariums: Aquarium[] }> = ({
   aquariums,
@@ -9,6 +10,7 @@ const AquariumsList: React.FunctionComponent<{ aquariums: Aquarium[] }> = ({
     {aquariums.map(({ name }, id) => (
       <AquariumsListItem key={id} id={id} name={name} />
     ))}
+    <AddAquariumButton />
   </React.Fragment>
 );
 
