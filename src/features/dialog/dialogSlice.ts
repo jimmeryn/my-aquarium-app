@@ -19,7 +19,7 @@ const dialogSlice = createSlice({
       }
       return state;
     },
-    closeDialog: (state) => DialogType.closed,
+    closeDialog: () => DialogType.closed,
   },
 });
 
