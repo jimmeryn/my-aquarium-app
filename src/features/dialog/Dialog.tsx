@@ -1,53 +1,44 @@
 import React from "react";
-import styled from "styled-components";
-import { StyledButton } from "../../components/buttons/Button";
-import styles from "./Dialog.module.scss";
+import DialogComponent from "./DialogComponent";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "app/rootReducer";
+import { closeDialog, DialogType } from "./dialogSlice";
+import DialogAquariumContent from "./DialogAquariumContent";
+import DialogParamsContent from "./DialogParamsContent";
+import DialogRefillContent from "./DialogRefillContent";
 
-const DialogComponent: React.FunctionComponent<{
-  className: string;
-  title: string;
-  submitHandle: () => void;
-  isOpen: boolean;
-}> = ({ className, title, submitHandle, children, isOpen }) => (
-  <React.Fragment>
-    {isOpen ? (
-      <div className={className}>
-        <h1 className={styles.dialogTitle}>{title}</h1>
-        {children}
-        <StyledButton
-          className={styles.dialogButton}
-          handleOnClick={submitHandle}
-        >
-          {"Submit"}
-        </StyledButton>
-      </div>
-    ) : null}
-  </React.Fragment>
-);
+const dialog = {
+  addParam: {
+    title: "Add Parameter",
+    submit: () => {},
+    children: () => <DialogParamsContent />,
+  },
+  addRefill: {
+    title: "Add Refill",
+    submit: () => {},
+    children: () => <DialogRefillContent />,
+  },
+  addAquarium: {
+    title: "Add Aquarium",
+    submit: () => {},
+    children: () => <DialogAquariumContent />,
+  },
+  closed: { title: "", submit: () => {}, children: () => null },
+};
 
-const Dialog = styled(DialogComponent)`
-  visibility: visible;
-  width: 30vw;
-  min-width: 400px;
-  height: 80vh;
-  background-color: #232f3e;
-  border-radius: 15px;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  button {
-    width: 70%;
-    height: 8vh;
-    margin-bottom: 10vh;
-  }
-`;
+const Dialog = () => {
+  const dialogState = useSelector((state: RootState) => state.dialogSlice);
+  const dispatch = useDispatch();
+  return (
+    <DialogComponent
+      title={dialog[dialogState].title}
+      isDialogOpen={dialogState !== DialogType.closed}
+      submitHandle={dialog[dialogState].submit}
+      closeDialog={() => dispatch(closeDialog())}
+    >
+      {dialog[dialogState].children()}
+    </DialogComponent>
+  );
+};
 
 export default Dialog;
