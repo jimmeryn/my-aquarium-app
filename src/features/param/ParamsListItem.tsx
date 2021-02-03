@@ -3,11 +3,10 @@ import styles from "./ParamsList.module.scss";
 import { AquariumParamButton } from "components/buttons/AquariumParamButton";
 
 const ParamsListItem: React.FunctionComponent<{
-  className: string;
   name: string;
   value: number | null;
-}> = ({ className, name, value }) => (
-  <AquariumParamButton className={className} divider>
+}> = ({ name, value }) => (
+  <AquariumParamButton className="latest-param-list-item" divider>
     <div className={styles.paramsListItem}>
       <div className={styles.paramName}>{name}</div>
       <div className={styles.paramValue}>{`${value} [mg/l]`}</div>
