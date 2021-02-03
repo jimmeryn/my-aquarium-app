@@ -4,6 +4,7 @@ import PageContent from "./PageContent";
 import Graph from "features/graph/Graph";
 import ParamMenu from "features/param/ParamMenu";
 import ParamTable from "features/param/ParamsTable";
+import Dialog from "features/dialog/Dialog";
 
 const AquariumPage: React.FunctionComponent<{
   name: string;
@@ -16,6 +17,7 @@ const AquariumPage: React.FunctionComponent<{
         <Graph />
         <ParamTable />
       </PageContent>
+      <Dialog />
     </Page>
   );
 };

@@ -29,6 +29,7 @@ const Home: React.FunctionComponent<{
       <Head className="head" />
       <FishBowlComponent />
     </PageContent>
+      <Dialog />
   </Page>
 );
 
