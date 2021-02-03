@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
- type SliceState = {};
+type SliceState = {};
 const initialState: SliceState[] = [];
 
 const graphSlice = createSlice({
