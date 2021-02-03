@@ -7,15 +7,15 @@ const AddButtonComponent: React.FunctionComponent<{
   className: string;
   name: string;
   value?: number | string;
-  onClick?: () => void;
-}> = ({ className, onClick, name, value }) => (
+  handleOnClick?: () => void;
+}> = ({ className, handleOnClick, name, value }) => (
   <ListItem divider dense>
     <ListItemText className={className} primary={name} secondary={value} />
     <Button>
       <AddIcon
         onClick={(e) => {
           e.preventDefault();
-          if (onClick) onClick();
+          if (handleOnClick) handleOnClick();
         }}
       />
     </Button>
