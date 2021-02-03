@@ -23,7 +23,7 @@ const AddButtonComponent: React.FunctionComponent<{
 );
 
 const AddButton = styled(AddButtonComponent)`
-  color: #bdc1c5;
+  color: var(--light-grey-1);
   padding-right: 0;
   margin-right: 0;
   p {
