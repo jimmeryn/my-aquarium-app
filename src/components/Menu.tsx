@@ -18,7 +18,6 @@ const Menu = styled(MenuComponent)`
   background-color: var(--menu-background-color);
   height: 100vh;
   width: 19vw;
-  z-index: 3;
   overflow-y: auto;
 `;
 
