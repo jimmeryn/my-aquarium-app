@@ -1,17 +1,16 @@
-import { combineReducers } from '@reduxjs/toolkit'
-import paramSlice from 'features/param/paramsSlice';
-import aquariumSlice from 'features/aquarium/aquariumsSlice';
-import dialogSlice from 'features/dialog/dialogSlice';
-import graphSlice from 'features/graph/graphSlice';
-
+import { combineReducers } from "@reduxjs/toolkit";
+import paramSlice from "features/param/paramsSlice";
+import aquariumSlice from "features/aquarium/aquariumsSlice";
+import dialogSlice from "features/dialog/dialogSlice";
+import graphSlice from "features/graph/graphSlice";
 
 const rootReducer = combineReducers({
   paramSlice,
   aquariumSlice,
   dialogSlice,
-  graphSlice
-})
+  graphSlice,
+});
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
 
-export default rootReducer
+export default rootReducer;

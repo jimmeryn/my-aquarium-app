@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 type SliceState = {};
 const initialState: SliceState[] = [];
@@ -7,12 +7,10 @@ const graphSlice = createSlice({
   name: "graph",
   initialState,
   reducers: {
-      addGraphData() {
+    addGraphData() {},
+  },
+});
 
-      }
-  }
-})
+export const { addGraphData } = graphSlice.actions;
 
-export const { addGraphData } = graphSlice.actions
-
-export default graphSlice.reducer
+export default graphSlice.reducer;

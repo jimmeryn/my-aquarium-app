@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export enum DialogType {
-    addParam = "addParam",
-    addRefill = "addRefill",
-    addAquarium = "addAquarium",
-    closed = "closed"
+  addParam = "addParam",
+  addRefill = "addRefill",
+  addAquarium = "addAquarium",
+  closed = "closed",
 }
 
 const initialState = DialogType.closed;
@@ -15,14 +15,14 @@ const dialogSlice = createSlice({
   reducers: {
     openDialog: (state, action: PayloadAction<{ type: DialogType }>) => {
       if (state !== action.payload.type) {
-        return action.payload.type
+        return action.payload.type;
       }
       return state;
     },
-    closeDialog: (state) => DialogType.closed
-  }
-})
+    closeDialog: (state) => DialogType.closed,
+  },
+});
 
-export const { openDialog, closeDialog } = dialogSlice.actions
+export const { openDialog, closeDialog } = dialogSlice.actions;
 
-export default dialogSlice.reducer
+export default dialogSlice.reducer;
