@@ -5,8 +5,9 @@ import Navbar from "components/Navbar";
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #eaeff1;
+  background-color: var(--page-content-color);
   text-align: center;
+  max-width: 81vw;
 `;
 
 const PageContent: React.FunctionComponent = ({ children }) => (

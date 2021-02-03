@@ -10,7 +10,7 @@ export const Title = styled.h1`
   font-size: 36px;
   line-height: 40px;
   text-transform: capitalize;
-  color: #000000;
+  color: black;
 `;
 
 export const Subtitle = styled(Title)`
@@ -19,5 +19,5 @@ export const Subtitle = styled(Title)`
   font-size: 24px;
   line-height: 24px;
   text-transform: lowercase;
-  color: #757575;
+  color: var(--subtitle-color);
 `;
