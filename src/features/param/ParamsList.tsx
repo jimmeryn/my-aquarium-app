@@ -7,12 +7,7 @@ const ParamsList: React.FunctionComponent<{ params: Param[] }> = ({
 }) => (
   <React.Fragment>
     {params.map(({ id, value, name }) => (
-      <ParamListItem
-        className="latest-param-list-item"
-        key={id}
-        value={value}
-        name={name}
-      />
+      <ParamListItem key={id} value={value} name={name} />
     ))}
   </React.Fragment>
 );
