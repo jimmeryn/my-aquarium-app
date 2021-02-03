@@ -1,7 +1,7 @@
 @import "app/App.scss";
 
 .dialog {
-  visibility: visible;
+  visibility: hidden;
   width: 30vw;
   min-width: 400px;
   height: 80vh;
@@ -28,9 +28,6 @@
 .dialogTitle {
   font-family: "Poppins";
   font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  text-align: center;
   color: var(--light-grey-1);
   padding-bottom: 0.5em;
   border-bottom: 3px solid var(--dark-grey-1);
