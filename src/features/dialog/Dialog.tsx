@@ -14,7 +14,9 @@ const dialog = {
   addParam: {
     title: "Add Parameter",
     submit: () => {},
-    children: () => <DialogParamsContent />,
+    children: () => (
+      <DialogParamsContent params={["CL2", "NO3", "pH", "CO2", "NO2", "aS"]} />
+    ),
   },
   addRefill: {
     title: "Add Refill",
