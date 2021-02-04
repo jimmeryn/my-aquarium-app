@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { StyledButton } from "./Button";
 
 export const AquariumTitleButton = styled(StyledButton)`
+  width: 100%;
+  height: 7vh;
   color: var(--light-grey-2);
   font-size: 0.95rem;
   font-weight: normal;

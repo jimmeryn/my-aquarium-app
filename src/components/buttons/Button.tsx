@@ -19,10 +19,6 @@ const Button: React.FunctionComponent<{
 );
 
 export const StyledButton = styled(Button)<{ dividers?: boolean }>`
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 7vh;
   font-family: "Poppins";
   text-transform: uppercase;
   cursor: pointer;
