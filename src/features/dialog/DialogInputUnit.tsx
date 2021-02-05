@@ -9,7 +9,7 @@ const DialogInputUnitComponent: React.FunctionComponent<{
 const DialogInputUnit = styled(DialogInputUnitComponent)`
   position: absolute;
   right: 0px;
-  bottom: 5px;
+  bottom: 6px;
 `;
 
 export default DialogInputUnit;

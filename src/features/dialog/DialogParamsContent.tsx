@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./DialogParamsTable.module.scss";
+import styles from "./Dialog.module.scss";
 import DialogInputWrapper from "./DialogInputWrapper";
 import DialogInput from "./DialogInput";
 import DialogInputName from "./DialogInputName";
@@ -7,8 +7,8 @@ import DialogInputName from "./DialogInputName";
 const DialogParamsContent: React.FunctionComponent<{ params: string[] }> = ({
   params,
 }) => (
-  <div className={style.paramTable}>
-    <div className={style.paramTableLabel}>
+  <div className={styles.paramTable}>
+    <div className={styles.paramTableLabel}>
       <div>Name</div>
       <div>Value [mg/l]</div>
     </div>

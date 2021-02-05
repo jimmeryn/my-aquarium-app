@@ -9,16 +9,13 @@ const DialogAquariumContent = () => (
     <DialogInputWrapper className="dialog-aquarium-name-wrapper">
       <DialogInputLabel
         className="dialog-aquarium-name-label"
-        label="Aquarium Name"
+        label="Name (optional)"
       />
       <DialogInput className="dialog-aquarium-name-input" textAlign="center" />
     </DialogInputWrapper>
     <DialogInputWrapper className="dialog-aquarium-size-wrapper">
-      <DialogInputLabel
-        className="dialog-aquarium-size-label"
-        label="Aquarium Size"
-      />
-      <DialogInput className="dialog-aquarium-size-input" isUnit />
+      <DialogInputLabel className="dialog-aquarium-size-label" label="Size" />
+      <DialogInput className="dialog-aquarium-size-input" textAlign="center" />
       <DialogInputUnit className="dialog-aquarium-name-unit" unit="l" />
     </DialogInputWrapper>
   </React.Fragment>

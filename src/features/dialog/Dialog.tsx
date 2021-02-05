@@ -47,7 +47,7 @@ const Dialog = () => {
     >
       {dialog[dialogState].children()}
       <DialogInputWrapper className="date-picker">
-        <DialogInputLabel className="date-picker-label" label={`Date`} />
+        <DialogInputLabel className="date-picker-label" label="Date" />
         <DialogInput
           className="date-picker-input"
           type="date"
