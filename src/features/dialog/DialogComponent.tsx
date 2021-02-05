@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { StyledButton } from "../../components/buttons/Button";
 import styles from "./Dialog.module.scss";
+import CloseButton from "components/buttons/CloseButton";
 
 const DialogComponent: React.FunctionComponent<{
   title: string;
@@ -24,8 +25,8 @@ const DialogComponent: React.FunctionComponent<{
 
       tl.to(dialogBackground, { duration: 0.2, autoAlpha: 1 }).fromTo(
         dialog,
-        { x: "-=1000", scale: 0.3 },
-        { x: "+=1000", autoAlpha: 1, scale: 1, duration: 0.3 },
+        { x: "-=1000", scale: 0.3, autoAlpha: 0 },
+        { x: "+=1000", scale: 1, autoAlpha: 1, duration: 0.3 },
         "-0.1"
       );
     }
@@ -45,7 +46,14 @@ const DialogComponent: React.FunctionComponent<{
           ref={wrapper}
         >
           <div className={styles.dialog}>
-            <h1 className={styles.dialogTitle}>{title}</h1>
+            <div className={styles.dialogTitleWrapper}>
+              <CloseButton
+                isDialogOpen={isDialogOpen}
+                className="close-button"
+                handleOnClick={closeDialog}
+              />
+              <h1 className={styles.dialogTitle}>{title}</h1>
+            </div>
             {children}
             <StyledButton
               className={styles.dialogButton}
