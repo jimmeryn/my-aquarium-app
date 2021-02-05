@@ -16,7 +16,7 @@ const DialogInputWrapper = styled(DialogInputWrapperComponent)<{
   border-bottom: solid 2px var(--dark-grey-1);
   opacity: 1;
   :hover {
-    opacity: 0.8;
+    opacity: 0.6;
     border-bottom: solid 2px var(--navbar-color);
   }
 `;
