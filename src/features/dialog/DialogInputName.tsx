@@ -11,6 +11,7 @@ const DialogInputName = styled(DialogInputNameComponent)`
   left: 0px;
   bottom: 5px;
   font-weight: lighter;
+  cursor: default;
 `;
 
 export default DialogInputName;
