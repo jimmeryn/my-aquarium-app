@@ -10,47 +10,62 @@ import DialogInputWrapper from "./DialogInputWrapper";
 import DialogInput from "./DialogInput";
 import DialogInputLabel from "./DialogInputLabel";
 
-const dialog = {
-  addParam: {
-    title: "Add Parameter",
-    submit: () => {},
-    children: () => (
-      <DialogParamsContent params={["CL2", "NO3", "pH", "CO2", "NO2", "aS"]} />
-    ),
-  },
-  addRefill: {
-    title: "Add Refill",
-    submit: () => {},
-    children: () => <DialogRefillContent />,
-  },
-  addAquarium: {
-    title: "Add Aquarium",
-    submit: () => {},
-    children: () => <DialogAquariumContent />,
-  },
-  closed: { title: "", submit: () => {}, children: () => null },
+const dialogSubmit = {
+  addParam: () => {},
+  addRefill: () => {},
+  addAquarium: () => {},
+  closed: () => {},
+};
+
+const dialogTitle = {
+  addParam: "Add Parameter",
+  addRefill: "Add Refill",
+  addAquarium: "Add Aquarium",
+  closed: "",
 };
 
 const Dialog = () => {
-  const dialogState = useSelector((state: RootState) => state.dialogSlice);
+  const { dialogState, params } = useSelector((state: RootState) => ({
+    dialogState: state.dialogSlice,
+    params: [
+      ...new Set(state.aquariumSlice[0].params.map((param) => param.name)),
+    ],
+  }));
   const dispatch = useDispatch();
 
   return (
     <DialogComponent
-      title={dialog[dialogState].title}
+      title={dialogTitle[dialogState]}
       isDialogOpen={dialogState !== DialogType.closed}
       submitHandle={() => {
-        dialog[dialogState].submit();
+        dialogSubmit[dialogState]();
         dispatch(closeDialog());
       }}
       closeDialog={() => dispatch(closeDialog())}
     >
-      {dialog[dialogState].children()}
+      {(() => {
+        switch (dialogState) {
+          case DialogType.addAquarium:
+            return <DialogAquariumContent value={100} />;
+          case DialogType.addParam:
+            return (
+              <DialogParamsContent
+                params={params}
+                values={Array(params.length).fill(0)}
+              />
+            );
+          case DialogType.addRefill:
+            return <DialogRefillContent value={10} />;
+          default:
+            return null;
+        }
+      })()}
       <DialogInputWrapper className="date-picker">
         <DialogInputLabel className="date-picker-label" label="Date" />
         <DialogInput
           className="date-picker-input"
           type="date"
+          value={new Date().toJSON().slice(0, 10)}
           textAlign="center"
         />
       </DialogInputWrapper>

@@ -4,9 +4,10 @@ import DialogInputWrapper from "./DialogInputWrapper";
 import DialogInput from "./DialogInput";
 import DialogInputName from "./DialogInputName";
 
-const DialogParamsContent: React.FunctionComponent<{ params: string[] }> = ({
-  params,
-}) => (
+const DialogParamsContent: React.FunctionComponent<{
+  params: string[];
+  values: number[];
+}> = ({ params, values }) => (
   <div className={styles.paramTable}>
     <div className={styles.paramTableLabel}>
       <div>Name</div>
@@ -18,7 +19,7 @@ const DialogParamsContent: React.FunctionComponent<{ params: string[] }> = ({
         className="dialog-param-item-wrapper"
         isTableItem
       >
-        <DialogInput className="dialog-param-item-input" />
+        <DialogInput className="dialog-param-item-input" value={values[i]} />
         <DialogInputName className="dialog-param-item-name" name={param} />
       </DialogInputWrapper>
     ))}
