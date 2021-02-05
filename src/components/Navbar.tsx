@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import Hamburger from "./Hamburger";
+import Hamburger from "./buttons/Hamburger";
 
 const NavbarComponent: React.FunctionComponent<{ className: string }> = ({
   className,
