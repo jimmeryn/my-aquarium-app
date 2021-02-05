@@ -50,6 +50,23 @@ export const StyledButton = styled(Button)<{ dividers?: boolean }>`
   cursor: pointer;
   color: white;
   opacity: 1;
+  position: relative;
+  overflow: hidden;
+
+  span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 500ms linear;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
 
   :hover,
   :focus {
