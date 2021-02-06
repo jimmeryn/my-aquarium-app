@@ -79,6 +79,9 @@
   font-family: Poppins;
   font-weight: lighter;
   padding-right: 20px;
+  @media only screen and (max-width: 800px) {
+    width: 50%;
+  }
 }
 
 .paramTableLabel {
