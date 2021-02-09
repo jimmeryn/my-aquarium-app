@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { TitleButton } from "components/buttons/TitleButton";
 
 const MenuComponent: React.FunctionComponent<{
   className: string;
-}> = ({ className, children }) => (
+  handleHomeClick: () => void;
+}> = ({ className, children, handleHomeClick }) => (
   <div className={className}>
-    <Link to={"/"}>
-      <TitleButton className="title-button">{"My Aquarium"}</TitleButton>
-    </Link>
+    <TitleButton className="title-button" handleOnClick={handleHomeClick}>
+      {"My Aquarium"}
+    </TitleButton>
     {children}
   </div>
 );

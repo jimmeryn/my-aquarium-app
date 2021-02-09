@@ -10,10 +10,15 @@ import Dialog from "features/dialog/Dialog";
 
 const Home: React.FunctionComponent<{
   aquariums: Aquarium[];
-}> = ({ aquariums }) => (
+  handleHomeClick: () => void;
+  handleAquariumClick: (aquariumId: number) => void;
+}> = ({ aquariums, handleHomeClick, handleAquariumClick }) => (
   <Page className="page">
-    <Menu className="menu">
-      <AquariumsList aquariums={aquariums} />
+    <Menu className="menu" handleHomeClick={handleHomeClick}>
+      <AquariumsList
+        aquariums={aquariums}
+        handleOnClick={handleAquariumClick}
+      />
     </Menu>
     <PageContent>
       <Head className="head" />
