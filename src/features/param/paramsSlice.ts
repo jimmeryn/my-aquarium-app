@@ -19,10 +19,20 @@ const paramSlice = createSlice({
       const { name, value, date, aquariumId } = action.payload;
       state.push({ name, value, date: new Date(date).toJSON(), aquariumId });
     },
+    addParams(
+      state,
+      action: PayloadAction<{
+        names: string[];
+        values: number[];
+        date: string;
+        aquariumId: number;
+      }>
+    ) {
+      // Add multiple params
     },
   },
 });
 
-export const { addParam } = paramSlice.actions;
+export const { addParam, addParams } = paramSlice.actions;
 
 export default paramSlice.reducer;
