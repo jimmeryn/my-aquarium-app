@@ -3,20 +3,19 @@ import gsap from "gsap";
 import { StyledButton } from "../../components/buttons/Button";
 import styles from "./Dialog.module.scss";
 import CloseButton from "components/buttons/CloseButton";
+import { useDispatch } from "react-redux";
+import { closeDialog } from "./dialogSlice";
 
 const DialogComponent: React.FunctionComponent<{
   title: string;
-  isDialogOpen: boolean;
   submitHandle: () => void;
-  closeDialog: () => {
-    payload: undefined;
-    type: string;
-  };
-}> = ({ title, isDialogOpen, submitHandle, closeDialog, children }) => {
+}> = ({ title, submitHandle, children }) => {
   const wrapper = useRef<HTMLDivElement>(null);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    if (isDialogOpen && wrapper.current) {
+    if (wrapper.current) {
       const dialogBackground = wrapper.current;
       const dialog = wrapper.current.children[0];
 
@@ -30,40 +29,36 @@ const DialogComponent: React.FunctionComponent<{
         "-0.1"
       );
     }
-  }, [isDialogOpen]);
+  }, []);
 
   return (
-    <React.Fragment>
-      {!isDialogOpen ? null : (
-        <div
-          className={styles.dialogBackground}
-          onClick={(event) => {
-            event.preventDefault();
-            if (event.target === event.currentTarget) {
-              closeDialog();
-            }
-          }}
-          ref={wrapper}
-        >
-          <div className={styles.dialog}>
-            <div className={styles.dialogTitleWrapper}>
-              <CloseButton
-                className="close-button"
+    <div
+      className={styles.dialogBackground}
+      onClick={(event) => {
+        event.preventDefault();
+        if (event.target === event.currentTarget) {
+          dispatch(closeDialog());
+        }
+      }}
+      ref={wrapper}
+    >
+      <div className={styles.dialog}>
+        <div className={styles.dialogTitleWrapper}>
+          <CloseButton
+            className="close-button"
             handleOnClick={() => dispatch(closeDialog())}
-              />
-              <h1 className={styles.dialogTitle}>{title}</h1>
-            </div>
-            {children}
-            <StyledButton
-              className={styles.dialogButton}
-              handleOnClick={submitHandle}
-            >
-              {"Submit"}
-            </StyledButton>
-          </div>
+          />
+          <h1 className={styles.dialogTitle}>{title}</h1>
         </div>
-      )}
-    </React.Fragment>
+        {children}
+        <StyledButton
+          className={styles.dialogButton}
+          handleOnClick={submitHandle}
+        >
+          {"Submit"}
+        </StyledButton>
+      </div>
+    </div>
   );
 };
 
