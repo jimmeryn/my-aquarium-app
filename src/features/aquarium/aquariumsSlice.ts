@@ -9,10 +9,16 @@ const aquariumSlice = createSlice({
   reducers: {
     addAquarium(
       state,
-      action: PayloadAction<{ name?: string; size: number; startDate: Date }>
+      action: PayloadAction<{ name?: string; size: number; startDate: string }>
     ) {
       const { name, size, startDate } = action.payload;
-      state.push({ name, size, params: [], startDate });
+
+      state.push({
+        name: name && name.length > 0 ? name : undefined,
+        size,
+        params: [],
+        startDate: new Date(startDate).toJSON(),
+      });
     },
   },
 });

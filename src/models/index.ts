@@ -3,12 +3,12 @@ export interface Aquarium {
   name?: string;
   size: number;
   params: Param[];
-  startDate: Date;
+  startDate: string;
 }
 
 export interface Param {
   id?: number;
-  date: Date;
+  date: string;
   name: string;
   value: number | null;
   aquariumId: number;

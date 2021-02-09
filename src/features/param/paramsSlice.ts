@@ -1,12 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Param } from "models";
 
-type SliceState = {
-  name: string,
-  value: number,
-  date: Date,
-  aquariumId: number,
-};
-const initialState: SliceState[] = require("api/db.json").params;
+const initialState: Param[] = require("api/db.json").params;
 
 const paramSlice = createSlice({
   name: "param",
@@ -15,14 +10,15 @@ const paramSlice = createSlice({
     addParam(
       state,
       action: PayloadAction<{
-        name: string,
-        value: number,
-        date: Date,
-        aquariumId: number,
+        name: string;
+        value: number;
+        date: string;
+        aquariumId: number;
       }>
     ) {
       const { name, value, date, aquariumId } = action.payload;
-      state.push({ name, value, date, aquariumId });
+      state.push({ name, value, date: new Date(date).toJSON(), aquariumId });
+    },
     },
   },
 });
