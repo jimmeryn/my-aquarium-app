@@ -3,10 +3,19 @@ import styled from "styled-components";
 
 const DialogInputComponent: React.FunctionComponent<{
   className: string;
+  value: string | number;
+  handleOnChange: React.Dispatch<React.SetStateAction<any>>;
   type?: string;
-  value?: string | number;
-}> = ({ className, type, value }) => (
-  <input className={className} type={type ?? "text"} value={value} />
+}> = ({ className, value, handleOnChange, type }) => (
+  <input
+    className={className}
+    type={type ?? "text"}
+    value={value}
+    maxLength={20}
+    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+      handleOnChange(event.target.value)
+    }
+  />
 );
 
 const DialogInput = styled(DialogInputComponent)<{
