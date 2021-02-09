@@ -48,9 +48,8 @@ const DialogComponent: React.FunctionComponent<{
           <div className={styles.dialog}>
             <div className={styles.dialogTitleWrapper}>
               <CloseButton
-                isDialogOpen={isDialogOpen}
                 className="close-button"
-                handleOnClick={closeDialog}
+            handleOnClick={() => dispatch(closeDialog())}
               />
               <h1 className={styles.dialogTitle}>{title}</h1>
             </div>

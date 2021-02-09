@@ -4,13 +4,12 @@ import styled from "styled-components";
 
 const CloseButtonComponent: React.FunctionComponent<{
   className: string;
-  isDialogOpen: boolean;
   handleOnClick: () => void;
-}> = ({ className, isDialogOpen, handleOnClick }) => {
+}> = ({ className, handleOnClick }) => {
   const wrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isDialogOpen && wrapper.current) {
+    if (wrapper.current) {
       const closeButton = wrapper.current.children[0];
 
       gsap.set([closeButton], { autoAlpha: 0 });
@@ -18,7 +17,7 @@ const CloseButtonComponent: React.FunctionComponent<{
 
       tl.to(closeButton, { autoAlpha: 1 });
     }
-  }, [isDialogOpen]);
+  }, []);
 
   return (
     <div ref={wrapper}>
