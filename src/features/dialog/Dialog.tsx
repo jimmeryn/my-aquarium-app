@@ -1,75 +1,68 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "app/rootReducer";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { closeDialog, DialogType } from "./dialogSlice";
-import DialogAquariumContent from "./DialogAquariumContent";
-import DialogComponent from "./DialogComponent";
-import DialogParamsContent from "./DialogParamsContent";
-import DialogRefillContent from "./DialogRefillContent";
-import DialogInputWrapper from "./DialogInputWrapper";
-import DialogInput from "./DialogInput";
-import DialogInputLabel from "./DialogInputLabel";
-
-const dialogSubmit = {
-  addParam: () => {},
-  addRefill: () => {},
-  addAquarium: () => {},
-  closed: () => {},
-};
-
-const dialogTitle = {
-  addParam: "Add Parameter",
-  addRefill: "Add Refill",
-  addAquarium: "Add Aquarium",
-  closed: "",
-};
+import NewAquariumDialog from "./NewAquariumDialog";
+import ParamDialog from "./ParamDialog";
+import RefillDialog from "./RefillDialog";
+import { addAquarium } from "features/aquarium/aquariumsSlice";
+import { addParam } from "features/param/paramsSlice";
 
 const Dialog = () => {
-  const { dialogState, params } = useSelector((state: RootState) => ({
+  const { dialogState, paramNames } = useSelector((state: RootState) => ({
     dialogState: state.dialogSlice,
-    params: [
+    paramNames: [
       ...new Set(state.aquariumSlice[0].params.map((param) => param.name)),
     ],
   }));
+
   const dispatch = useDispatch();
 
   return (
-    <DialogComponent
-      title={dialogTitle[dialogState]}
-      isDialogOpen={dialogState !== DialogType.closed}
-      submitHandle={() => {
-        dialogSubmit[dialogState]();
-        dispatch(closeDialog());
-      }}
-      closeDialog={() => dispatch(closeDialog())}
-    >
+    <React.Fragment>
       {(() => {
         switch (dialogState) {
           case DialogType.addAquarium:
-            return <DialogAquariumContent value={100} />;
+            return (
+              <NewAquariumDialog
+                submitHandle={(name, size, startDate) => {
+                  dispatch(addAquarium({ name, size, startDate }));
+                  dispatch(closeDialog());
+                }}
+              />
+            );
           case DialogType.addParam:
             return (
-              <DialogParamsContent
-                params={params}
-                values={Array(params.length).fill(0)}
+              <ParamDialog
+                paramNames={paramNames}
+                // TODO
+                submitHandle={() => {
+                  dispatch(closeDialog());
+                }}
               />
             );
           case DialogType.addRefill:
-            return <DialogRefillContent value={10} />;
+            return (
+              <RefillDialog
+                // TODO
+                submitHandle={(refillValue: number, date: string) => {
+                  dispatch(
+                    addParam({
+                      name: "refill",
+                      value: refillValue,
+                      date,
+                      aquariumId: 0,
+                    })
+                  );
+                  dispatch(closeDialog());
+                }}
+              />
+            );
           default:
             return null;
         }
       })()}
-      <DialogInputWrapper className="date-picker">
-        <DialogInputLabel className="date-picker-label" label="Date" />
-        <DialogInput
-          className="date-picker-input"
-          type="date"
-          value={new Date().toJSON().slice(0, 10)}
-          textAlign="center"
-        />
-      </DialogInputWrapper>
-    </DialogComponent>
+    </React.Fragment>
   );
 };
 
