@@ -2,15 +2,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Page from "./Page";
 import PageContent from "./PageContent";
-import { RootState } from "app/rootReducer";
+import { getLatestRefillValue } from "api/filterParamsFunctions";
 import Graph from "features/graph/Graph";
 import Dialog from "features/dialog/Dialog";
-import AddParamsButton from "features/param/AddParamsButton";
-import AddRefillButton from "features/param/AddRefillButton";
 import ParamTable from "features/param/ParamsTable";
-import LatestParamsList from "features/param/LatestParamsList";
-import Menu from "components/Menu";
+import LatestParamsList from "features/aquarium/LatestParamsList";
 import { AquariumTitleButton } from "components/buttons/AquariumTitleButton";
+import AddButton from "components/buttons/AddButton";
 
 const AquariumPage: React.FunctionComponent<{
   aquariumId: number;
@@ -29,8 +27,21 @@ const AquariumPage: React.FunctionComponent<{
         >
           {aquariumName}
         </AquariumTitleButton>
-        <AddRefillButton aquariumId={aquariumId} />
-        <AddParamsButton />
+        <AddButton
+          className="add-refill-button"
+          name="Refill"
+          value={refillValue ?? "No refills"}
+          handleOnClick={() =>
+            dispatch(openDialog({ type: DialogType.addRefill, aquariumId }))
+          }
+        />
+        <AddButton
+          className="add-params-button"
+          name="Parameters"
+          handleOnClick={() =>
+            dispatch(openDialog({ type: DialogType.addParam, aquariumId }))
+          }
+        />
         <LatestParamsList aquariumId={aquariumId} />
       </Menu>
       <PageContent>
